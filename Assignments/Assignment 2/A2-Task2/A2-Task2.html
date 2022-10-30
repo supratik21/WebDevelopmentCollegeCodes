@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>A2-Task2 | Supratik Sarkar</title>
+        <style>
+            body{
+                max-width: max-content;
+                margin: auto;
+                background-image: url(images/background.jpg);
+            }
+            img{
+                border: 5px solid #555;
+            }
+        </style>
+        <script>
+            var pic = "winter";
+            var flag = 0;
+            var sun_emoji = "&#9728";
+            function changeImage(){
+                var sun = document.getElementById("sun");
+                var picture = document.getElementById("picture");
+                if(pic=="winter"){
+                    pic = "summer";
+                    picture.src = "images/Summer.jpeg";
+                    if(flag < 7){
+                        sun.innerHTML = sun.innerHTML + sun_emoji;
+                        flag++;
+                    }
+                    else {
+                        sun.innerHTML = sun_emoji;
+                        flag = 1;
+                    }
+                }
+                else {
+                    pic = "winter";
+                    picture.src = "images/Winter.jpeg";
+                    if(flag < 7){
+                        sun.innerHTML = sun.innerHTML + sun_emoji;
+                        flag++;
+                    }
+                    else {
+                        sun.innerHTML = sun_emoji;
+                        flag = 1;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>MOVE THE MOUSE OUT TO SEE THE &#x2600;: </h1>
+        <img src="images/Winter.jpeg" id="picture" height="600" width="500" alt="Missing picture " onmouseout="changeImage();"/>
+        <br>
+        <br>
+        <span id="sun"></span>
+    </body>
+</html>

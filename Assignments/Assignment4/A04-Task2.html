@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Task 2 | Supratik Sarkar</title>
+        <script>
+            function makeAJAXQueryOrganisationRecord(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    readyStateChangeHandler(xhttp);
+                };
+                xhttp.open("GET", "A04-Task1.json", true);
+                xhttp.send();
+            }
+
+            function readyStateChangeHandler(xhttp){
+                if(xhttp.readyState == 4){
+                    if(xhttp.status == 200){
+                        handleStatusSuccess(xhttp);
+                    }
+                    else{
+                        handleStatusFailure(xhttp);
+                    }
+                }
+            }
+
+            function handleStatusFailure(xhttp){
+                var display = document.getElementById("display");
+                display.innerHTML = "XMLHttpRequest failed: status" + xhttp.status;
+            }
+
+            function handleStatusSuccess(xhttp){
+                var jsonText = xhttp.responseText;
+                var orgObj = JSON.parse(jsonText);
+                //console.log(orgObj);
+                displayData(orgObj); 
+            }
+
+            function displayData(orgObj){
+                var html = "<b>Organisations Register</b>";
+                html = html + "</br>";
+                html = html + "<i> list last update:&nbsp;" + orgObj.organisationsRegister[0].currentDate +"</i>";
+                for(var i=0; i < orgObj.organisationsRegister[0].organisationList.length; i++){
+                    html = html + "<hr>";
+                    html = html + "organisation: <b><u>" + orgObj.organisationsRegister[0].organisationList[i].organisationName + ",</u></b><i> " + orgObj.organisationsRegister[0].organisationList[i].address + "</i>";
+                    html = html + "<br/>";
+                    html = html + "<b>available services:</b>"
+                    html = html + "<br/><br/>"
+                    for(var j=0; j < orgObj.organisationsRegister[0].organisationList[i].availableServices.length; j++){
+                        html = html + "*" + (j+1) + "&nbsp; - &nbsp;" + orgObj.organisationsRegister[0].organisationList[i].availableServices[j].days + ", <b>" + orgObj.organisationsRegister[0].organisationList[i].availableServices[j].name  + "</b> ->&nbsp;" + orgObj.organisationsRegister[0].organisationList[i].availableServices[j].cost;
+                        html = html + "<br/><br/>" 
+                    }
+                }
+                var display = document.getElementById("display");
+                display.innerHTML = html;
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="makeAJAXQueryOrganisationRecord()">Read JSON</button>
+        <br/>
+        <br/>
+        <div id="display"></div>
+    </body>
+</html>

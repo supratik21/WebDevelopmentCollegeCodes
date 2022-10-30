@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>My Appointment</title>
+        <style>
+            h1, h2{
+                text-align: center;
+            }
+            tr:hover {
+                background-color: #D6EEEE;
+            }
+            th,td {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 5px;
+                padding-right: 10px;
+            }
+            form{
+                overflow: hidden;
+            }
+            .name, .mob, .email, .details, .slot{
+                float: right;
+            }
+            table {
+                background-color: rgba(151, 166, 160, 0.1);
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+                width: 40%;
+
+            }
+            body{
+                background-color: rgb(228, 242, 231);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>MY APPOINTMENT</h1>
+        <h2>BOOK YOUR DENTIST APPOINTMENT NOW: &#x1F468;&#x200D;&#x2695;&#xFE0F;</h2>
+        <form action="http://myAppo.com.au/query" method="get" target="_blank">
+            <table class="table-bg" border="1px solid black">
+                <tr>
+                    <td>
+                        <strong>Select Surgery:</strong><br/>
+                        <br/>
+                        <input type="radio" name="dentist" value="woll"/>Best Wollongong <br/> 
+                        <input type="radio" name="dentist" value="liv"/>Perfect Smile Liverpool <br/>
+                        <input type="radio" name="dentist" value="shell"/>One Dentist Shellharbour <br/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Name:</strong>
+                        <input class="name" type="text" name="name" placeholder="Type Your name here" size="50" required/><br/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Mobile number:</strong>
+                        <input class="mob" type="text" name="phone" placeholder="Enter your mobile number" size="50" required/><br/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Email:</strong>
+                        <input class="email" type="text" name="email" placeholder="Enter your Email" size="50" required/><br/><br/>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Preferred Time Slot:</strong>
+                        <select class="slot" name="time" required>
+                            <option value="">Choose your preferred slot</option>
+                            <option value="1">9-10 am</option>
+                            <option value="2">10-11 am</option>
+                            <option value="3">12-1 pm</option>
+                            <option value="4">1-2 pm</option>
+                            <option value="5">2-3 pm</option>
+                        </select>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Additional details:</strong>
+                        <textarea class="details" name="note" rows="5" cols="41" placeholder="Type additional details here"></textarea><br/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Preferred method of communication:</strong><br/>
+                        <br/>
+                        <input type="checkbox" name="reminder" value="SMS"/>SMS<br/>
+                        <input type="checkbox" name="reminder" value="EM"/>Email<br/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <input type="submit" value="Submit"/>
+                        <input type="reset" value="Reset"/>
+                        <br/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

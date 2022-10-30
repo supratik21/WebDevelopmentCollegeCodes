@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>A2-Task1 - Supratik Sarkar</title>
+        <style>
+            body{
+                max-width: max-content;
+                margin: auto;
+                background-color: rgb(242, 216, 206);
+            }
+            table {
+                background-color: rgba(151, 164, 166, 0.1);
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+            th, td{
+                padding: 25px;
+            }
+        </style>
+        <script>
+            function displayNumber(){
+                var min = 100;
+                var max=999;
+                var number = document.getElementById("number");
+                var num = Math.floor(Math.random()* (max-min)+min);
+                number.innerHTML = num;
+            }
+            function multiplyByThree(){
+                var number_value = document.getElementById("number").innerHTML;
+                var result = document.getElementById("result");
+                var textfield = document.getElementById("textfield");
+                var num = Number(number_value);
+                var updated_number = num*3;
+                number.innerHTML = updated_number.toString();
+                result.innerHTML = textfield.value + " " + updated_number.toString();
+            }
+            function divideByThree(){
+                var number_value = document.getElementById("number").innerHTML;
+                var result = document.getElementById("result");
+                var textfield = document.getElementById("textfield");
+                var num = Number(number_value);
+                var updated_number = Math.round(num/3);
+                number.innerHTML = updated_number.toString();
+                result.innerHTML = textfield.value + " " + updated_number.toString();
+            }
+            function resetPage(){
+                var textfield = document.getElementById("textfield");
+                textfield.value = "";
+                displayNumber();
+                var number = document.getElementById("number").innerHTML;
+                result.innerHTML = number;
+            }
+        </script>
+    </head>
+    <body onload="displayNumber();">
+        <h1>SIMPLE CALCULATION TOOL: (Multiples of 3)</h1>
+        <table>
+            <tr>
+                <td valign="top"><button id="multiply" onclick="multiplyByThree();">Multiply by 3</button></td>
+                <td valign="top"><button id="divide" onclick="divideByThree();">Divide by 3</button></td>
+                <td valign="top"><button id="reset" onclick="resetPage();">Reset</button></td>
+                <td valign="top">
+                    <input type="text" id="textfield">
+                    <br/>
+                    <br/>
+                    <font color="green"><strong><span id="number"></span></strong></font>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <strong>Message: </strong><span id="result"></span>
+    </body>
+</html>

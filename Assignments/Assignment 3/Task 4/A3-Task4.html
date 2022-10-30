@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>My photo album!</title>
+        <script>
+            function changeText(){
+                //store colors
+                var colors = ["pink", "blue", "yellow", "violet"];
+                var header = document.getElementById("header");
+                var index = Math.floor(Math.random() * 4);
+                header.style.color = colors[index];
+            }
+        </script>
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                color: white;
+            }
+            #image1, #image2, #image3{
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+            }
+            div#image1:hover{
+                transform: rotate(60deg);
+            }
+            div#image2:hover{
+                transform: scale(2) skew(30deg);
+            }
+            div#image3:hover{
+                transform: translate(0px, 30px) rotate(-90deg);
+            }
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 align="center" id="header" onmouseover="changeText()">My photo album!</h1>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div id="image1">
+            <img id="img1" src="images/image1.jpeg" width="300px" height="200px">
+        </div>
+        <div id="image2">
+            <img id="img2" src="images/image2.jpeg" width="300px" height="200px">
+        </div>
+        <div id="image3">
+            <img id="img3" src="images/image3.jpeg" width="300px" height="200px">
+        </div>
+    </body>
+</html>

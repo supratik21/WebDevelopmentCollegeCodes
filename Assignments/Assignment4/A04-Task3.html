@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Silent Auction</title>
+        <script>
+            var numberOfBids = 0;
+            var lastBid = 0;
+            var difference = 0;
+            function registerAuction(){
+                numberOfBids ++;
+                var nameTf = document.getElementById("name");
+                var name = nameTf.value;
+                var offeredPriceTf = document.getElementById("offeredPrice");
+                var offeredPrice = Number(offeredPriceTf.value);
+
+                var bids = name+"'s offer: $" + offeredPrice;
+                var li = document.createElement("li");
+                var bidText = document.createTextNode(bids);
+                li.appendChild(bidText);
+
+                var bidOL = document.getElementById("bidList");
+                bidOL.appendChild(li);
+
+                difference = (offeredPrice - lastBid).toFixed(2);
+                lastBid = offeredPrice;
+
+
+                var bidFootnote = document.getElementById("bidFootnote");
+                bidFootnote.innerHTML = "Number of bids:" + numberOfBids + ",&nbsp;last offer:&nbsp;$"+ offeredPrice.toFixed(2) + ",&nbsp;difference:&nbsp;$" + difference;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Harry Potter and the Philosopher's Stone</h1>
+        <h4>(first edition, signed by the author)</h4>
+        name:
+        <input type="text" id="name">
+        <br/>
+        <br/>
+        offered price $:
+        <input type="text" id="offeredPrice">
+        <br/>
+        <br/>
+        <button onclick="registerAuction()">BID</button>
+        <ol id="bidList"></ol>
+        <br/>
+        <span id="bidFootnote"></span>
+    </body>
+</html>

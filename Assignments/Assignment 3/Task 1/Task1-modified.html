@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Task1 | Supratik Sarkar</title>
+        <script>
+            var output = "";
+            var multiplier;
+            var animation;
+            var emoji;
+            function numGenerator(){
+                //get multiplier
+                multiplier = Number(document.getElementById("multiplier").value);
+                //get result
+                var result = document.getElementById("result");
+                //generate random number
+                var num = Math.floor((Math.random() * 1000)+1);
+                //calculation
+                var answer = num * multiplier; 
+                //display result
+                output = output + "<br/><br/>" + emojiPicker() + " " +(num + " * " + multiplier + " = " + answer) + " " + emojiPicker();
+                result.innerHTML = output;
+            }
+
+            function emojiPicker() {
+                //define emojis
+                var emojis = ["&#8987;" ,"&#9748;" ,"&#9968;" ,"&#9995;" ,"&#11088;" ,"&#127817;" ,"&#127828;" ,"&#127839;" ,"&#127951;" ,"&#128032;"];
+                //generate random emoji and return
+                var random = Math.floor(Math.random()*10);
+                return emojis[random];
+            }
+
+            function startAnimation(){
+                multiplier = Number(document.getElementById("multiplier").value);
+                //check if multiplier field is blank
+                if(multiplier == 0){
+                    multiplier = 0;
+                }
+                if(animation == null) {
+                    //reset output
+                    output = "";
+                    numGenerator();
+                    animation = setInterval(numGenerator, 2000);
+                }
+            }
+
+            function stopAnimation(){
+                //get textbox
+                var text = document.getElementById("multiplier");
+                if(animation != null){
+                    clearInterval(animation);
+                    animation = null;
+                    text.value = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <strong>Multiplier:</strong>&nbsp;<input type="text" id="multiplier">
+        <br/>
+        <br/>
+        <button onclick="startAnimation()">Start</button>
+        &nbsp;
+        <button onclick="stopAnimation()">Stop</button>
+        <br/>
+        <br/>
+        <span id="result"></span>
+    </body>
+</html>

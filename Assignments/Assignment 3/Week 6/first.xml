@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes" ?>
+<! DOCTYPE studentList [
+    <!ELEMENT studentList (student*)>
+    <!ELEMENT student(firstName, lastName, email)>
+    <!ELEMENT firstName (#PCDATA) >
+    <!ELEMENT lastName (#PCDATA) >
+    <!ELEMENT email (#PCDATA) >
+]>
+<studentList>
+    <student>
+        <firstName>Supratik</firstName>
+        <lastName>Sarkar</lastName>
+        <email>ss7178@uowmail.edu.au</email>
+    </student>
+    <student>
+        <firstName>Sumit</firstName>
+        <lastName>Suman</lastName>
+        <email>ss2627@uowmail.edu.au</email>
+    </student>
+</studentList>

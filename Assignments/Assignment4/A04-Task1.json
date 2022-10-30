@@ -1,0 +1,46 @@
+{
+    "organisationsRegister": [
+        {
+            "currentDate": "26/09/2022",
+            "organisationList": [
+                {
+                    "organisationName": "Community friends",
+                        "address": "236 Crown Street, Wollongong",
+                        "availableServices": [
+                            {
+                                "name": "Visual art",
+                                "days": "Monday",
+                                "cost": "$10"
+                            },
+                            {
+                                "name": "Singing together",
+                                "days": "Wednesday",
+                                "cost": "free"
+                            },
+                            {
+                                "name": "My music workshop",
+                                "days": "Tuesday, Wednesday",
+                                "cost": "$18"
+                            }
+                        ]
+                },
+                {
+                    "organisationName": "LCC health",
+                    "address": "123A Elizabeth Ave, Liverpool",
+                    "availableServices": [
+                        {
+                            "name": "Health check",
+                            "days": "Friday",
+                            "cost": "$12"
+                        },
+                        {
+                            "name": "Blood test",
+                            "days": "Friday",
+                            "cost": "$15"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

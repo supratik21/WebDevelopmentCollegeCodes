@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE organisationRegister [
+    <!ELEMENT organisationRegister (organisation*) >
+    <!ATTLIST organisationRegister currentDate CDATA #REQUIRED >
+    <!ELEMENT organisation (availableService*) >
+    <!ATTLIST organisation orgName CDATA #REQUIRED >
+    <!ELEMENT availableService (days, cost) >
+    <!ATTLIST availableService serviceName CDATA #REQUIRED >
+    <!ELEMENT days (#PCDATA)>
+    <!ELEMENT cost (#PCDATA)>
+]>
+<organisationRegister currentDate="01/07/2022">
+    <organisation orgName="Community friends">
+         <availableService serviceName="Visual art">
+            <days>Monday</days>
+            <cost>$10</cost>
+         </availableService>
+         <availableService serviceName="Singing together">
+            <days>Wednesday</days>
+            <cost>free</cost>
+         </availableService>
+         <availableService serviceName="My music workshop">
+            <days>Tuesday, Wednesday</days>
+            <cost>$18</cost>
+         </availableService>
+    </organisation>
+    <organisation orgName="LCC health">
+        <availableService serviceName="Health check">
+            <days>Friday</days>
+            <cost>$12</cost>
+        </availableService>
+        <availableService serviceName="Blood test">
+            <days>Friday</days>
+            <cost>$15</cost>
+        </availableService>
+    </organisation>
+</organisationRegister>
