@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Week 9 | Task 1</title>
+		<style>
+			h1{
+				text-align:center;
+			}
+			h1:hover{
+				transform: scale(2);
+			}
+		</style>
+		<script>
+			function green(){
+				var head = document.getElementById("head");
+				head.style.color = "green";
+			}
+			function orange(){
+				var head = document.getElementById("head");
+				head.style.color = "orange";
+			}
+			function blue(){
+				var head = document.getElementById("head");
+				head.style.color = "blue";
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="head">University of Wollongong</h1>
+		<button onClick="green()">Green</button>
+		<button onClick="orange()">Orange</button>
+		<button onClick="blue()">Blue</button>
+	</body>
+</html>

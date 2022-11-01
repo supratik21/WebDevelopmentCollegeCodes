@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Week 4 | Task 5</title>
+		<style>
+			.cat{
+				color:orange;
+			}
+			.dog{
+				color:green;
+			}
+		</style>
+		<script>
+			var catCount = 0;
+			var dogCount = 0;
+			function increaseCatCount(){
+				var cat = document.getElementById("cat");
+				catCount ++;
+				cat.innerHTML = "Number of cat clicks: "+ catCount;
+			}
+			function increaseDogCount(){
+				var dog = document.getElementById("dog");
+				dogCount ++;
+				dog.innerHTML = "Number of dog clicks: "+ dogCount;
+			}
+		</script>
+	</head>
+	<body>
+		<img onClick="increaseCatCount()" height="200" width="300" src="cat.png"/>
+		<img onClick="increaseDogCount()" height="200" width="300" src="dog.png"/>
+		<br/>
+		<p class="cat" id="cat">Number of cat clicks: 0</p>
+		<p class="dog" id="dog">Number of dog clicks: 0</p>
+	</body>
+</html>

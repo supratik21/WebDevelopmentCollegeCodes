@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Week 6 | Task 4</title>
+	</head>
+	<script>
+		var count = 0;
+		var animation;
+		function startAnimation(){
+			if(animation == null){
+				animation = setInterval(showCounter, 1000);
+			}
+		}
+		
+		function stopAnimation(){
+			if(animation != null){
+				clearInterval(animation);
+				animation = null;
+			}
+		}
+		
+		function showCounter(){
+			var counter = document.getElementById("counter");
+			count ++;
+			counter.innerHTML = count;
+		}
+	</script>
+	<body>
+		<button onClick="startAnimation()">Start Counter Animation</button>
+		<button onClick="stopAnimation()">Stop Counter Animation</button>
+		<br/>
+		<br/>
+		<span id="counter"></span>
+	</body>
+</html>

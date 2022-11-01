@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Week 4 | Task 6</title>
+		<script>
+			var output = "";
+			function display(){
+				var message = document.getElementById("message");
+				output = output + "&#x1f438";
+				message.innerHTML = output;
+			}
+		</script>
+	</head>
+	<body>
+		<img onClick="display()" height="200" width="300" src="cat.png"/>
+		<br/>
+		<span id="message"></span>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Week 4 | Task 4</title>
+	</head>
+	<script>
+		function cat(){
+			var message = document.getElementById("message");
+			message.innerHTML = "Ribbit";
+			message.style.color = "green";
+		}
+		function dog(){
+			var message = document.getElementById("message");
+			message.innerHTML = "Roar";
+			message.style.color = "orange";
+		}
+	</script>
+	<body>
+		<img onClick="cat()" src="cat.png"/>
+		<img onClick="dog()" src="dog.png"/>
+		<br/>
+		<span id="message"></span>
+	</body>
+</html>

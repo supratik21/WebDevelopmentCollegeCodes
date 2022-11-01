@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Week 4 | Task 1</title>
+	</head>
+	<script>
+		var orientation = 'cat-dog';
+		function swap(arrange){
+			orientation = arrange;
+			var image1 = document.getElementById("image1");
+			var image2 = document.getElementById("image2");
+			if(orientation == "cat-dog"){
+				image1.src = "dog.png";
+				image2.src = "cat.png";
+				orientation = dog-cat;
+			}
+			else{
+				image1.src = "cat.png";
+				image2.src = "dog.png";
+				orientation = "dog-cat";
+			}
+		}
+	</script>
+	<body>
+		<img id="image1" src="cat.png" height="200" width="300" onmouseover="swap('cat-dog')"/>
+		<img id="image2" src="dog.png" height="200" width="300" onmouseover="swap('dog-cat')"/>
+	</body>
+</html>

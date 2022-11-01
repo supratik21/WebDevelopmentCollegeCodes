@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE studentRecord[
+	<!ELEMENT studentRecord (studentNumber, firstName, lastName, result)>
+	<!ELEMENT studentNumber (#PCDATA)>
+	<!ELEMENT firstName (#PCDATA)>
+	<!ELEMENT lastName (#PCDATA)>
+	<!ELEMENT result (subject*)>
+	<!ELEMENT subject (name, creditPoint, mark, grade)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT creditPoint (#PCDATA)>
+	<!ELEMENT mark (#PCDATA)>
+	<!ELEMENT grade (#PCDATA)>
+]>
+<studentRecord>
+	<studentNumber>1231234</studentNumber>
+	<firstName>John</firstName>
+	<lastName>Smith</lastName>
+	<result>
+		<subject>
+			<name>MATH101</name>
+			<creditPoint>4</creditPoint>
+			<mark>85</mark>
+			<grade>A</grade>
+		</subject>
+		<subject>
+			<name>ECON111</name>
+			<creditPoint>5</creditPoint>
+			<mark>70</mark>
+			<grade>B</grade>
+		</subject>
+		<subject>
+			<name>CS100</name>
+			<creditPoint>5</creditPoint>
+			<mark>80</mark>
+			<grade>A</grade>
+		</subject>
+		<subject>
+			<name>LAW121</name>
+			<creditPoint>6</creditPoint>
+			<mark>75</mark>
+			<grade>B</grade>
+		</subject>
+	</result>
+</studentRecord>

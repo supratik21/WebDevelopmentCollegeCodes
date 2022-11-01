@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Week 4 | Task 7</title>
+		<style>
+			p{
+				font-size: 20px;
+				color: blue;
+			}
+		</style>
+		<script>
+			function display(){
+				var image = document.getElementById("image");
+				var command = document.getElementById("command").value;
+				if(command == "display lion"){
+					image.src = "cat.png";
+				}
+				else if(command == "display frog"){
+					image.src = "dog.png";
+				}
+				else{
+					alert("Invalid command");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Enter Command:</p>
+		<input type="text" id="command" onChange="display()"/>
+		<br/>
+		<img id="image"/>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Week 6 | Task 1</title>
+	</head>
+	<script>
+		var animation;
+		function startAnimation(){
+			if(animation == null){
+				animation = setInterval(showImage, 2000);
+			}
+		}
+		function stopAnimation(){
+			if(animation != null){
+				clearInterval(animation);
+				animation = null;
+			}
+		}
+		function showImage(){
+			var imageArray = ["cat.png", "dog.png", "bird.png", "lion.png"];
+			var random = Math.floor(Math.random() * imageArray.length);
+			var image = document.getElementById("image");
+			image.src = imageArray[random];
+		}
+	</script>
+	<body>
+		<button onClick="startAnimation()">Start Slideshow</button>
+		<button onClick="stopAnimation()">Stop Slideshow</button>
+		<!-- <button onclick="showImage()">Show Image</button> -->
+		<img height="200" wight="300" id="image"/>
+	</body>
+</html>
